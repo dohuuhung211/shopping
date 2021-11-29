@@ -29,7 +29,7 @@
                     <a href="{{ route('categories.index') }}" class="nav-link">
                         <i class="nav-icon fas fa-th"></i>
                         <p>
-                            Danh muc san pham
+                            Danh mục sản phẩn
                             <span class="right badge badge-danger">New</span>
                         </p>
                     </a>
@@ -38,7 +38,16 @@
                     <a href="{{ route('menus.index') }}" class="nav-link">
                         <i class="nav-icon fas fa-th"></i>
                         <p>
-                            Menus
+                            Menu
+
+                        </p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="{{ route('product.index') }}" class="nav-link">
+                        <i class="nav-icon fas fa-th"></i>
+                        <p>
+                            Sản phẩm
 
                         </p>
                     </a>
