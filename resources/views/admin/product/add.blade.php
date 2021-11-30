@@ -17,7 +17,7 @@
     <!-- /.content-header -->
 
         <!-- Main content -->
-        <form action="" method="post" enctype="multipart/form-data">
+        <form action="{{ route('products.store') }}" method="post" enctype="multipart/form-data">
             @csrf
             <div class="content">
                 <div class="container-fluid">
@@ -54,8 +54,8 @@
                             </div>
                             <div class="form-group">
                                 <label>Chọn danh mục</label>
-                                <select class="form-control select2_init" name="parent_id">
-                                    <option value="">Danh muc cha</option>
+                                <select class="form-control select2_init" name="category_id">
+                                    <option value="">Danh muc</option>
                                     {!! $htmlOption !!}
                                 </select>
                             </div>
@@ -67,15 +67,16 @@
                             </div>
 
                         </div>
-                        <div class="con-md-12">
-                            <div class="form-group">
-                                <label>Nội dung</label>
-                                <textarea name="content" class="form-control tinymce_editor_init" rows="3"></textarea>
-                            </div>
+
+                    </div>
+                    <div class="con-md-12">
+                        <div class="form-group">
+                            <label>Nội dung</label>
+                            <textarea name="contents" class="form-control tinymce_editor_init" rows="3"></textarea>
                         </div>
-                        <div class="col-md-12">
-                            <button type="submit" class="btn btn-primary">Lưu</button>
-                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <button type="submit" class="btn btn-primary">Lưu</button>
                     </div>
                     <!-- /.row -->
                 </div><!-- /.container-fluid -->
