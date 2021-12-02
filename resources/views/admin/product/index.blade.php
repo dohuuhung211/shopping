@@ -4,6 +4,12 @@
     <title>Trang chu</title>
 @endsection
 
+@section('css')
+    <link rel="stylesheet" href="{{ asset('admins/product/index/list.css') }}">
+@endsection
+@section('js')
+
+@endsection
 
 @section('content')
     <div class="content-wrapper">
@@ -28,26 +34,26 @@
                             </tr>
                             </thead>
                             <tbody>
-{{--                            @foreach($categories as $category)--}}
+                            @foreach($products as $product)
                                 <tr>
-                                    <th scope="row">1</th>
-                                    <td>Iphone 10 </td>
-                                    <td>30.000.000</td>
+                                    <th scope="row">{{ $product->id }}</th>
+                                    <td>{{ $product->name }}</td>
+                                    <td>{{ $product->price }}</td>
                                     <td>
-                                        <img src="">
+                                        <img class="product_image_150_100" src="{{ $product->feature_image_path }}">
                                     </td>
-                                    <td>Điện thoại</td>
+                                    <td>{{ optional($product->category)->name }}</td>
                                     <td>
-                                        <a href="" class="btn btn-default">Edit</a>
+                                        <a href="{{ route('products.edit', ['id' => $product->id]) }}" class="btn btn-default">Edit</a>
                                         <a href="" class="btn btn-danger">Delete</a>
                                     </td>
 
                                 </tr>
-{{--                            @endforeach--}}
+                            @endforeach
                             </tbody>
                         </table>
                     </div>
-                    {{--                    {{ $categories->links() }}--}}
+                                        {{ $products->links() }}
                 </div>
             </div>
         </div>
